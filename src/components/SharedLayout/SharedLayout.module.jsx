@@ -2,18 +2,28 @@ import styled from '@emotion/styled';
 import background from '../../images/bg.jpg';
 
 export const Container = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-
+  min-height: 100vh;
   background-image: url(${background});
-  background-size: cover;
+  background-repeat: repeat-y;
+
   background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
+  display: flex;
+  flex-direction: column;
 `;
+// export const Container = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+
+//   background-image: url(${background});
+//   background-repeat: repeat-y;
+//   background-size: cover;
+//   background-position: center;
+//   min-height: 100vh;
+// `;
 export const Navigation = styled.nav`
   margin-bottom: 24px;
 `;
