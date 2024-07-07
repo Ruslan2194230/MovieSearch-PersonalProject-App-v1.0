@@ -1,0 +1,110 @@
+@import-normalize; /* bring in normalize.css styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Poppins', 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: white;
+  background-color: #1e1f27;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* //////кастомное что я добавил */
+.search-page__title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.search-page .search > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 !important;
+  padding: 20px;
+  background-color: var(--ui-bg-darker);
+  border-radius: 6px;
+  padding-bottom: 10px;
+}
+.search-page .search br {
+  display: none;
+}
+.search-page .search #searchinput {
+  flex: 1 1 0;
+  margin-right: 20px;
+  min-width: 100px;
+}
+.searchstyle {
+  width: 480px;
+}
+.search {
+  padding: 0;
+}
+#searchtable,
+#searchtable td {
+  vertical-align: top;
+  text-align: left;
+}
+#searchtable fieldset {
+  font-size: 11px;
+  border: 1px solid #d7d7d7;
+  padding: 10px;
+  text-align: left;
+  margin: 0 4px 4px 0 !important;
+  border-radius: 6px;
+}
+fieldset legend {
+  font-size: 11px;
+  font-weight: bold;
+  color: #696969;
+}
+#searchtable table,
+#searchtable form {
+  margin: 0;
+  width: 100%;
+}
+#searchuser,
+#searchinput {
+  width: 90% !important;
+}
+.search > div {
+  margin-bottom: 10px;
+}
+.search input[type='text'],
+.search select {
+  display: block;
+  width: 100% !important;
+  margin-bottom: 10px;
+}
+.search input[type='checkbox'],
+.search input[type='radio'] {
+  margin-right: 5px;
+}
+#searchinput + br,
+#searchinput + br + br {
+  display: none;
+}
