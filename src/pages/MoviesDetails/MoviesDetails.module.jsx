@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import background from '../../images/bg.jpg';
+// import background from '../../images/bg.jpg';
 
 export const GoBackLink = styled.span`
   a {

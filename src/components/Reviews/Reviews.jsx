@@ -20,7 +20,6 @@ const Reviews = () => {
     };
     fetchReviews();
   }, [movieId]);
-  // console.log('location in Reviews',location);
   return reviews.length === 0 ? (
     <h3>No Reviews.!!!!!!</h3>
   ) : (

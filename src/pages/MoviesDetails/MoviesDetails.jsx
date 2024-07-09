@@ -22,6 +22,7 @@ import {
   ImageWrapper,
 } from './MoviesDetails.module';
 import { Loader } from 'components/Loader/Loader';
+import LabTabs from './AdditionalFilmInfoInTabs/AdditionalFilmInfoInTabs';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
@@ -82,7 +83,8 @@ const MoviesDetails = () => {
       </FilmWrapper>
       <AdditionalInfo>
         <h2>Additional information</h2>
-        <StyledList>
+        <LabTabs></LabTabs>
+        {/* <StyledList>
           <ListItem>
             <NavLink to="cast" state={location.state}>
               Cast<span>.</span>
@@ -93,7 +95,7 @@ const MoviesDetails = () => {
               Reviews<span>.</span>
             </NavLink>
           </ListItem>
-        </StyledList>
+        </StyledList> */}
         <Suspense fallback={<div>Loading subpage...</div>}>
           <Outlet />
         </Suspense>
