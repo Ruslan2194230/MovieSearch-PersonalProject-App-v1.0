@@ -15,6 +15,7 @@ const FilmItem = ({ movie, location }) => {
   const { isFavorite, addToFavoritesAndUpdate, removeFromFavoritesAndUpdate } =
     useFavorites();
   const [isFav, setIsFav] = useState(isFavorite(id));
+  // console.log('isFav', isFav);
 
   useEffect(() => {
     setIsFav(isFavorite(id));

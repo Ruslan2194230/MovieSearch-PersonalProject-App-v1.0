@@ -1,13 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFavorites } from '../../Contexts/FavoriteContext';
 import FilmsList from 'components/FilmsList/FilmsList';
+import { getFavorites } from 'services/favoritesFilmStorage';
+import { getMovieById } from 'services/getMovies';
 
 const Favorites = () => {
-  const { favoriteMovies, removeFromFavoritesAndUpdate } = useFavorites();
+  const { removeFromFavoritesAndUpdate, favoriteMoviesId } = useFavorites();
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const fetchFavoriteMovies = async () => {
+      const favoriteIds = getFavorites();
+      const moviePromises = favoriteIds.map(id => getMovieById(id));
+      const movies = await Promise.all(moviePromises);
+      setFavoriteMovies(movies);
+    };
+
+    fetchFavoriteMovies();
+  }, [favoriteMoviesId]);
 
   const handleRemoveFavorite = movieId => {
+    console.log('movieId', movieId);
     removeFromFavoritesAndUpdate(movieId);
   };
 
