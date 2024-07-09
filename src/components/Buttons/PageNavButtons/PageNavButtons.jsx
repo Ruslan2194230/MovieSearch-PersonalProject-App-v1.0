@@ -1,26 +1,26 @@
-import { NavButton } from './NavButton';
+import { NavButton } from './NavButton/NavButton';
+import {
+  PageIndexContainer,
+  PageNavButtonsContainer,
+} from './PageNavButtons.module';
 
-export const PageNavButtons = ({ page, handlePageChange }) => {
+export const PageNavButtons = ({ page, handlePageChange, totalPages }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-start',
-      }}
-    >
+    <PageNavButtonsContainer>
       <NavButton
         disabled={page === 1}
         label="Prev page"
         icon="left_arrow"
         onClick={() => handlePageChange(page - 1)}
       ></NavButton>
+      <PageIndexContainer>{page}</PageIndexContainer>
       <NavButton
-        // disabled={totalPages === true}
+        disabled={totalPages === page}
         label="Next page"
         icon="right_arrow"
         reverse="true"
         onClick={() => handlePageChange(page + 1)}
       ></NavButton>
-    </div>
+    </PageNavButtonsContainer>
   );
 };

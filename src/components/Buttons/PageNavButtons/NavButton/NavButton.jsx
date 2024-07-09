@@ -1,6 +1,6 @@
 import { Icon, Button } from './NavButton.module';
-import left_arrow from '../../../images/left_arrow.png';
-import right_arrow from '../../../images/right_arrow.png';
+import left_arrow from '../../../../images/left_arrow.png';
+import right_arrow from '../../../../images/right_arrow.png';
 
 const iconObj = {
   left_arrow,
