@@ -1,17 +1,10 @@
-import { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from 'services/getMovies';
-import {
-  FilmWrapper,
-  FilmTitle,
-  FilmDescr,
-  GoBackLink,
-  FilmSubTitle,
-  StyledListDescr,
-  AdditionalInfo,
-} from './MoviesDetails.module';
-import LabTabs from './AdditionalFilmInfoInTabs/AdditionalFilmInfoInTabs';
-import { FilmImage } from './FilmImage/FilmImage';
+
+import { AdditionalInfo } from './AdditionalInfo/AdditionalInfo';
+import { GoBackLink } from './GoBackLink/GoBackLink';
+import { MoviesDetailsCard } from './MoviesDetailsCard/MoviesDetailsCard';
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
@@ -34,35 +27,10 @@ const MoviesDetails = () => {
 
   return (
     <>
-      <GoBackLink>
-        <Link to={backLinkHref}>
-          Go back<span>.</span>
-        </Link>
-      </GoBackLink>
-      <FilmWrapper>
-        <FilmImage movie={movie} />
+      <GoBackLink backLinkHref={backLinkHref} />
+      <MoviesDetailsCard movie={movie}></MoviesDetailsCard>
 
-        <div>
-          <FilmTitle>{movie.original_title}</FilmTitle>
-          <FilmSubTitle>Rating: {Math.round(movie.vote_average)}</FilmSubTitle>
-          <FilmSubTitle>Overview</FilmSubTitle>
-          <FilmDescr>{movie.overview}</FilmDescr>
-          <FilmSubTitle>Genres</FilmSubTitle>
-          <StyledListDescr>
-            {movie.genres?.map(genre => (
-              <li key={genre.id}>{genre.name}</li>
-            ))}
-          </StyledListDescr>
-        </div>
-      </FilmWrapper>
-      <AdditionalInfo>
-        <h2>Additional information</h2>
-        <LabTabs></LabTabs>
-
-        <Suspense fallback={<div>Loading subpage...</div>}>
-          <Outlet />
-        </Suspense>
-      </AdditionalInfo>
+      <AdditionalInfo></AdditionalInfo>
     </>
   );
 };

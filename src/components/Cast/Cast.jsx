@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getCastMovie } from 'services/getMovies';
 import { BASE_POSTER_URL, PLACEHOLDER } from 'utils/constants';
 import { ListItem, StyledList } from './Cast.module';
 
 const Cast = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const { movieId } = useParams();
 
   const [cast, setCast] = useState([]);

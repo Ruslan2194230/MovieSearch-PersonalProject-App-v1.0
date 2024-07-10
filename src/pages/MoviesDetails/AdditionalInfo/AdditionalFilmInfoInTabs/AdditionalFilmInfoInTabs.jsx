@@ -9,7 +9,7 @@ import Reviews from 'components/Reviews/Reviews';
 // import { StyledMuiTab } from './AdditionalFilmInfoInTabs.module';
 import { Tab } from '@mui/material';
 
-export default function LabTabs() {
+export default function AdditionalFilmInfoInTabs() {
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {

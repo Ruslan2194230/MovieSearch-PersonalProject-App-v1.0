@@ -1,18 +1,16 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import SharedLayout from '../SharedLayout/SharedLayout';
-import { FavoriteProvider } from '../../Contexts/FavoriteContext';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+import { FavoriteProvider } from './Contexts/FavoriteContext';
 import { Loader } from 'components/Loader/Loader';
 import { ErrorProvider } from 'Contexts/ErrorContext';
 
-const Home = lazy(() => import('../../pages/Home/Home'));
-const MoviesDetails = lazy(() =>
-  import('../../pages/MoviesDetails/MoviesDetails')
-);
-const Movies = lazy(() => import('../../pages/Movies/Movies'));
-const Cast = lazy(() => import('../Cast/Cast'));
-const Reviews = lazy(() => import('../Reviews/Reviews'));
-const Favorites = lazy(() => import('../../pages/Favorites/Favorites'));
+const Home = lazy(() => import('./pages/Home/Home'));
+const MoviesDetails = lazy(() => import('./pages/MoviesDetails/MoviesDetails'));
+const Movies = lazy(() => import('./pages/Movies/Movies'));
+const Cast = lazy(() => import('./components/Cast/Cast'));
+const Reviews = lazy(() => import('./components/Reviews/Reviews'));
+const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
 
 export const App = () => {
   return (

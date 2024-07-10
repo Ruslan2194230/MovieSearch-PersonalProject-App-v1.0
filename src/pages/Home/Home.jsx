@@ -1,5 +1,3 @@
-///
-
 import { useEffect, useState } from 'react';
 
 import { getTrendingMovies } from 'services/getMovies';
