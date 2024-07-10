@@ -6,7 +6,7 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Cast from 'components/Cast/Cast';
 import Reviews from 'components/Reviews/Reviews';
-import { StyledMuiTab } from './AdditionalFilmInfoInTabs.module';
+// import { StyledMuiTab } from './AdditionalFilmInfoInTabs.module';
 import { Tab } from '@mui/material';
 
 export default function LabTabs() {
@@ -42,7 +42,6 @@ export default function LabTabs() {
           >
             <Tab label="Cast" value="1" />
             <Tab label="Reviews" value="2" />
-            {/* <Tab label="Item Three" value="3" /> */}
           </TabList>
         </Box>
         <TabPanel value="1">
@@ -51,7 +50,6 @@ export default function LabTabs() {
         <TabPanel value="2">
           <Reviews />
         </TabPanel>
-        {/* <TabPanel value="3">Item Three</TabPanel> */}
       </TabContext>
     </Box>
   );

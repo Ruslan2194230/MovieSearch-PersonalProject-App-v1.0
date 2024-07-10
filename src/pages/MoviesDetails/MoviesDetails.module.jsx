@@ -48,16 +48,6 @@ export const FilmWrapper = styled.div`
   padding: 20px;
   border-radius: 10px;
 `;
-export const ImageWrapper = styled.div`
-  height: 272.99px;
-  width: 182px;
-`;
-
-export const FilmImg = styled.img`
-  max-width: 182px;
-  background: #424242;
-  border-radius: 15px;
-`;
 
 export const FilmTitle = styled.h2`
   font-size: 26px;

@@ -5,7 +5,7 @@ import { BASE_POSTER_URL, PLACEHOLDER } from 'utils/constants';
 import { ListItem, StyledList } from './Cast.module';
 
 const Cast = () => {
-  const location = useLocation()
+  const location = useLocation();
   const { movieId } = useParams();
 
   const [cast, setCast] = useState([]);
@@ -24,8 +24,6 @@ const Cast = () => {
 
   return (
     <>
-            {console.log('location in Cast',location)}
-
       {
         <StyledList>
           {cast.map(({ id, profile_path, original_name, character }) => (
