@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { InputSearch, ButtonSearch } from './Form.module';
-import { useError } from 'Contexts/ErrorContext';
 
 const Form = ({ setSearchParams }) => {
   const [query, setQuery] = useState('');
-  const { handleWarning } = useError();
+
   const handleSubmit = e => {
     e.preventDefault();
 

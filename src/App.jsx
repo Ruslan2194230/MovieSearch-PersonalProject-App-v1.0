@@ -8,8 +8,16 @@ import { ErrorProvider } from 'Contexts/ErrorContext';
 const Home = lazy(() => import('./pages/Home/Home'));
 const MoviesDetails = lazy(() => import('./pages/MoviesDetails/MoviesDetails'));
 const Movies = lazy(() => import('./pages/Movies/Movies'));
-const Cast = lazy(() => import('./components/Cast/Cast'));
-const Reviews = lazy(() => import('./components/Reviews/Reviews'));
+const Cast = lazy(() =>
+  import(
+    './pages/MoviesDetails/AdditionalInfo/AdditionalFilmInfoInTabs/AdditionalFilmInfoComponents/Cast/Cast'
+  )
+);
+const Reviews = lazy(() =>
+  import(
+    './pages/MoviesDetails/AdditionalInfo/AdditionalFilmInfoInTabs/AdditionalFilmInfoComponents/Reviews/Reviews'
+  )
+);
 const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
 
 export const App = () => {

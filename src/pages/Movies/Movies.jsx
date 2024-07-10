@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Form, useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from 'services/getMovies';
 
 import { useError } from '../../Contexts/ErrorContext';
 
-import Form from 'components/Form/Form';
 import FilmsList from 'components/FilmsList/FilmsList';
 import { PageNavButtons } from 'components/Buttons/PageNavButtons/PageNavButtons';
 

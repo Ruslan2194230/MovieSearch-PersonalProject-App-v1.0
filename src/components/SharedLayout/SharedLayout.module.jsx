@@ -11,19 +11,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-// export const Container = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100vh;
 
-//   background-image: url(${background});
-//   background-repeat: repeat-y;
-//   background-size: cover;
-//   background-position: center;
-//   min-height: 100vh;
-// `;
 export const Navigation = styled.nav`
   margin-bottom: 24px;
 `;

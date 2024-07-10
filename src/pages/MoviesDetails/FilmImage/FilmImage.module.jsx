@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const FilmImageWrapper = styled.div`
-  height: 272.99px;
+  height: 273px;
   width: 182px;
 `;
 
