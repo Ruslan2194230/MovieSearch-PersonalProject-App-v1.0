@@ -30,7 +30,7 @@ export const getMovieById = async movieId => {
     const { data } = await axios.get(
       `movie/${movieId}?api_key=${API_KEY}&language=en-US`
     );
-
+    // console.log('data', data);
     return data;
   } catch (error) {
     console.error('Error fetching movie by id:', error);

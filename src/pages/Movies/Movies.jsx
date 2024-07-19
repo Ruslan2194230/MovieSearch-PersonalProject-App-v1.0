@@ -2,11 +2,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByQuery } from 'services/getMovies';
 
-import { useError } from '../../Contexts/ErrorContext';
+import { useError } from '../../contexts/ErrorContext';
 
-import FilmsList from 'components/FilmsList/FilmsList';
-import { PageNavButtons } from 'components/Buttons/PageNavButtons/PageNavButtons';
-import Form from './MoviesComponents/Form/Form';
+import { MovieList } from 'components/MovieList/MovieList';
+import { PageNavButtonsWrapper } from 'components/Buttons/PageNavButtons/PageNavButtonsWrapper';
+import { Form } from './MoviesForm/MoviesForm';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -40,7 +40,7 @@ const Movies = () => {
         }
         setTotalPagesState(total_pages);
         setMovies(results);
-      } catch (e) {
+      } catch (error) {
         handleMinorError('Failed to fetch movies. Please try again.');
       }
     };
@@ -61,9 +61,9 @@ const Movies = () => {
   return (
     <>
       <Form setSearchParams={setSearchParams} />
-      {movies.length > 0 && <FilmsList movies={movies} />}
+      {movies.length > 0 && <MovieList movies={movies} />}
       {movies.length > 0 && (
-        <PageNavButtons
+        <PageNavButtonsWrapper
           movies={movies}
           page={Number(searchParams.get('page')) || 1}
           totalPages={totalPagesState}

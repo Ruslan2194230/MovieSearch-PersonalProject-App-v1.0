@@ -1,38 +1,38 @@
 import React, { useEffect, useState } from 'react';
-import { useFavorites } from '../../Contexts/FavoriteContext';
-import FilmsList from 'components/FilmsList/FilmsList';
-import { getFavorites } from 'services/favoritesFilmStorage';
+import { MovieList } from 'components/MovieList/MovieList';
 import { getMovieById } from 'services/getMovies';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectFavorites } from 'ReduxToolkit/selectors/selectors';
-import {
-  addToFavorites,
-  removeFromFavorites,
-} from 'ReduxToolkit/slices/favoritesSlice';
+import { useSelectFavoriteMovies } from '../../store/favorites/favorites.selectors/favoritesSelectors';
+
+import { getFavorites } from '../../store/favorites/favorites.operations/favoriteMoviesStorage';
+import { removeFromFavorites } from '../../store/favorites/favorites.slices/favoritesSlice';
 
 const Favorites = () => {
-  // const { removeFromFavoritesAndUpdate, favoriteMoviesId } = useFavorites();
-  // const [favoriteMovies, setFavoriteMovies] = useState([]);
-  const dispatch = useDispatch();
-  const favoriteMovies = useSelector(selectFavorites);
+  const favoriteMovieIds = useSelectFavoriteMovies();
+
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
 
   useEffect(() => {
     const fetchFavoriteMovies = async () => {
       const favoriteIds = getFavorites();
       const moviePromises = favoriteIds.map(id => getMovieById(id));
       const movies = await Promise.all(moviePromises);
-      dispatch(addToFavorites(movies));
+      setFavoriteMovies(movies);
     };
 
     fetchFavoriteMovies();
-  }, [dispatch]);
+  }, [favoriteMovieIds]);
 
   const handleRemoveFavorite = movieId => {
-    dispatch(removeFromFavorites(movieId));
+    removeFromFavorites(movieId);
+    setFavoriteMovies(prevFavoriteMovies =>
+      prevFavoriteMovies.filter(
+        prevFavoriteMovieId => prevFavoriteMovieId !== movieId
+      )
+    );
   };
 
   return (
-    <FilmsList
+    <MovieList
       movies={favoriteMovies}
       onRemoveFavorite={handleRemoveFavorite}
     />
@@ -40,9 +40,3 @@ const Favorites = () => {
 };
 
 export default Favorites;
-
-///
-///
-///
-///
-///

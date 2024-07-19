@@ -6,10 +6,10 @@ import {
   NavItem,
   NavList,
   Navigation,
-} from './SharedLayout.module';
+} from './SharedLayout.styled';
 import { Loader } from 'components/Loader/Loader';
 
-const SharedLayout = () => {
+export const SharedLayout = () => {
   const location = useLocation();
   return (
     <Container>
@@ -42,11 +42,3 @@ const SharedLayout = () => {
     </Container>
   );
 };
-
-export default SharedLayout;
-
-///
-///
-///
-///
-///

@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import ErrorPage from '../components/ErrorPage/ErrorPage';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -45,9 +45,3 @@ export const ErrorProvider = ({ children }) => {
     </ErrorContext.Provider>
   );
 };
-
-///
-///
-///
-///
-///
