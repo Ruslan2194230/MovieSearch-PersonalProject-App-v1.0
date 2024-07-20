@@ -1,5 +1,5 @@
+import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import React, { createContext, useState } from 'react';
-import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

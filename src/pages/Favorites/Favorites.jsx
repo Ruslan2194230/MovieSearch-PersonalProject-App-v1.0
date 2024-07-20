@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { MovieList } from 'components/MovieList/MovieList';
 import { getMovieById } from 'services/getMovies';
-import { useSelectFavoriteMovies } from '../../store/favorites/favorites.selectors/favoritesSelectors';
 
-import { getFavorites } from '../../store/favorites/favorites.operations/favoriteMoviesStorage';
-import { removeFromFavorites } from '../../store/favorites/favorites.slices/favoritesSlice';
+import { removeFromFavorites } from 'store/favorites/favorites.slices/favoritesSlice';
+import { getFavorites } from 'store/favorites/favorites.operations/favoriteMoviesStorage';
+import { useSelectFavoriteMovies } from 'store/favorites/favorites.selectors/favoritesSelectors';
 
 const Favorites = () => {
   const favoriteMovieIds = useSelectFavoriteMovies();

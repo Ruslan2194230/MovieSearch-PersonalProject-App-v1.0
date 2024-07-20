@@ -4,10 +4,9 @@ import {
   FavoriteSvg,
 } from './ButtonAddToFavorite.styled';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
-import { useIsFavorite } from '../../../store/favorites/favorites.selectors/favoritesSelectors';
 import { useFavoriteActions } from 'store/favorites/favorites.actions.hooks/favorites.actions.hooks';
+import { useIsFavorite } from 'store/favorites/favorites.selectors/favoritesSelectors';
 
 export const ButtonAddToFavorite = ({ id }) => {
   const { addFavoriteHook, removeFavoriteHook } = useFavoriteActions();
@@ -22,10 +21,8 @@ export const ButtonAddToFavorite = ({ id }) => {
     e.stopPropagation();
     e.preventDefault();
     if (isFav) {
-      // dispatch(removeFromFavorites(id));
       removeFavoriteHook(id);
     } else {
-      // dispatch(addToFavorites(id));
       addFavoriteHook(id);
     }
     setIsFav(!isFav);

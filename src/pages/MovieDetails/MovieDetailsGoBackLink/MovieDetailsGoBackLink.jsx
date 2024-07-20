@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { GoBackLinkSpan } from './GoBackLink.module';
+import { GoBackLinkSpan } from './MovieDetailsGoBackLink.styled';
 
 export const GoBackLink = ({ backLinkHref }) => {
   return (
@@ -8,9 +8,3 @@ export const GoBackLink = ({ backLinkHref }) => {
     </GoBackLinkSpan>
   );
 };
-
-///
-///
-///
-///
-///

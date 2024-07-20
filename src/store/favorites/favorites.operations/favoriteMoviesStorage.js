@@ -26,8 +26,3 @@ export const removeFromFavoriteMoviesStorage = movieId => {
   const updatedFavorites = favorites.filter(id => id !== movieId);
   localStorage.setItem(FAVORITES_KEY, JSON.stringify(updatedFavorites));
 };
-
-///
-//
-//
-//

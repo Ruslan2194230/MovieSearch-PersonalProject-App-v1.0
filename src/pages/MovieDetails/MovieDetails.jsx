@@ -3,9 +3,10 @@ import { useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from 'services/getMovies';
 
 // import { AdditionalInfo } from './MovieDetailsAdditionalInfo/MovieDetailsAdditionalInfoContainer';
-import { GoBackLink } from './GoBackLink/GoBackLink';
+// import { GoBackLink } from './MovieDetailsGoBackLink/MovieDetailsGoBackLink';
 import { MovieDetailsCard } from './MovieDetailsCard/MovieDetailsCard';
 import { AdditionalInfo } from './MovieDetailsAdditionalInfo/MovieDetailsAdditionalInfoContainer';
+import { GoBackLink } from './MovieDetailsGoBackLink/MovieDetailsGoBackLink';
 
 const MovieDetails = () => {
   const { movieId } = useParams();

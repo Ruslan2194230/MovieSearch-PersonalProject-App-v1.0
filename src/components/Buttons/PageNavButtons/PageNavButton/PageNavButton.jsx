@@ -1,6 +1,6 @@
 import { Icon, Button } from './PageNavButton.styled';
-import left_arrow from '../../../../assets/images/left_arrow.png';
-import right_arrow from '../../../../assets/images/right_arrow.png';
+import left_arrow from 'assets/images/left_arrow.png';
+import right_arrow from 'assets/images/right_arrow.png';
 
 const iconObj = {
   left_arrow,
