@@ -24,11 +24,6 @@ export const FavoriteButton = styled.button`
 export const FavoriteIcon = styled.span`
   width: 24px;
   height: 24px;
-
-  // svg {
-  //   width: 24px;
-  //   height: 24px;
-  // }
 `;
 export const FavoriteSvg = styled.svg`
   width: 24px;

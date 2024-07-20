@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './components/SharedLayout/SharedLayout';
-// import { FavoriteProvider } from './Contexts/FavoriteContext';
 import { Loader } from 'components/Loader/Loader';
 import { ErrorProvider } from 'contexts/ErrorContext';
 import { Provider } from 'react-redux';

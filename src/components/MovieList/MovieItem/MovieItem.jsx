@@ -31,5 +31,3 @@ export const MovieItem = ({ movie, location }) => {
     </MovieItemLi>
   );
 };
-
-// export default MovieItem;

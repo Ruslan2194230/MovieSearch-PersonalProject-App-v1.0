@@ -1,13 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-  addToFavoriteMoviesStorage,
-  removeFromFavoriteMoviesStorage,
-} from '../favorites.operations/favoriteMoviesStorage';
+
 import storage from 'redux-persist/lib/storage';
 import persistReducer from 'redux-persist/es/persistReducer';
 
-// const favoriteMovieIdState =
-//   JSON.parse(localStorage.getItem('favorites')) || [];
 const favoritesSliceInitState = { favoriteMoviesid: [] };
 
 const favoritesSlice = createSlice({
@@ -15,15 +10,21 @@ const favoritesSlice = createSlice({
   initialState: favoritesSliceInitState,
   reducers: {
     addToFavorites: (state, action) => {
-      // addToFavoriteMoviesStorage(action.payload);
-
-      // return (state = [...state, action.payload]);
-
-      state.favoriteMoviesid += action.payload;
+      return {
+        ...state,
+        favoriteMoviesid: [...state.favoriteMoviesid, action.payload],
+      };
+      // or with IMMER, mutable way
+      // state.favoriteMoviesid.push(action.payload);
     },
     removeFromFavorites: (state, action) => {
-      // removeFromFavoriteMoviesStorage(action.payload);
-      return (state = state.filter(movieId => movieId !== action.payload));
+      state.favoriteMoviesid = state.favoriteMoviesid.filter(
+        movieId => movieId !== action.payload
+      );
+
+      // second way with usage IMMER, mutable way
+      // const findIndex = state.favoriteMoviesid.indexOf(action.payload);
+      // state.favoriteMoviesid.splice(findIndex, 1);
     },
   },
 });

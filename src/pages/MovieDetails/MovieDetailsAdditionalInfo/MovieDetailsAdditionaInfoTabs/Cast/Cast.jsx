@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCastMovie } from 'services/getMovies';
 import { BASE_POSTER_URL, PLACEHOLDER } from 'utils/constants';
-import { CastImg, CastSpan, ListItem, StyledList } from './Cast.module';
+import { CastImg, CastSpan, ListItem, StyledList } from './Cast.styled';
 
 export const Cast = () => {
-  // const location = useLocation();
   const { movieId } = useParams();
 
   const [cast, setCast] = useState([]);
@@ -16,7 +15,7 @@ export const Cast = () => {
         const castData = await getCastMovie(movieId);
         setCast(castData);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     fetchCast();

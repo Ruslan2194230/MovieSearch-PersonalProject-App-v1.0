@@ -21,7 +21,7 @@ const MovieDetails = () => {
         const movieById = await getMovieById(movieId);
         setMovie(movieById);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     fetchMovieById();
