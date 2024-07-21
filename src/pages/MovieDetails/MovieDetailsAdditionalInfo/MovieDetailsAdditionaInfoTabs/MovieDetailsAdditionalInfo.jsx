@@ -4,7 +4,9 @@ import Box from '@mui/material/Box';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
+// import Cast from 'pages/MovieDetails/MovieDetailsAdditionalInfo/AdditionalFilmInfoInTabs/Cast/Cast';
+// import Reviews from 'pages/MovieDetails/MovieDetailsAdditionalInfo/AdditionalFilmInfoInTabs/Reviews/Reviews';
+// import { StyledMuiTab } from './AdditionalFilmInfoInTabs.module';
 import { Tab } from '@mui/material';
 import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';

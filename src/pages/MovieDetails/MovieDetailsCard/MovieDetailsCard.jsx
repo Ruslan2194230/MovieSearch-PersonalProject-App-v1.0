@@ -5,7 +5,7 @@ import {
   FilmDescr,
   FilmSubTitle,
   StyledListDescr,
-} from './MovieDetailsCard.styled';
+} from './MovieDetailsCard.module';
 
 export const MovieDetailsCard = ({ movie }) => {
   return (
@@ -27,3 +27,9 @@ export const MovieDetailsCard = ({ movie }) => {
     </FilmWrapper>
   );
 };
+
+///
+///
+///
+///
+///

@@ -5,5 +5,6 @@ export const useSelectFavoriteMovies = () =>
 
 export const useIsFavorite = movieId => {
   const favoriteMovies = useSelectFavoriteMovies();
+  // console.log('favoriteMovies in useIsFavorite', favoriteMovies);
   return favoriteMovies.includes(movieId);
 };

@@ -1,11 +1,12 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './components/SharedLayout/SharedLayout';
+// import { FavoriteProvider } from './Contexts/FavoriteContext';
 import { Loader } from 'components/Loader/Loader';
+import { ErrorProvider } from 'contexts/ErrorContext';
 import { Provider } from 'react-redux';
 import { persistor, store } from 'store/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import { ErrorProvider } from 'contexts/ErrorContext';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const MovieDetails = lazy(() => import('./pages/MovieDetails/MovieDetails'));

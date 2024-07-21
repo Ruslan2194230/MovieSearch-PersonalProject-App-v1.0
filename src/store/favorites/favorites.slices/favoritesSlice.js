@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import persistReducer from 'redux-persist/es/persistReducer';
 
+// const favoriteMovieIdState =
+//   JSON.parse(localStorage.getItem('favorites')) || [];
 const favoritesSliceInitState = { favoriteMoviesid: [] };
 
 const favoritesSlice = createSlice({

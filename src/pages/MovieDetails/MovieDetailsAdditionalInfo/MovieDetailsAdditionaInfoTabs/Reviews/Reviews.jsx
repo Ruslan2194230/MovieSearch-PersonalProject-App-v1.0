@@ -19,7 +19,7 @@ export const Reviews = () => {
         const reviewsData = await getReviewsMovie(movieId);
         setReviews(reviewsData);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     fetchReviews();
@@ -39,3 +39,11 @@ export const Reviews = () => {
     </ReviewsStyledList>
   );
 };
+
+// export default Reviews;
+
+///
+///
+///
+///
+///
